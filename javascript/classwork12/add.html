@@ -1,0 +1,25 @@
+<!DOCTYPE html> <!-- add.html -->
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление книги</title>
+</head>
+<body>
+
+<form name="add-book-form" novalidate>
+    <div>
+        <input name="title" type="text" placeholder="Введите название"
+            required minlength="3" maxlength="100">
+        <span></span>
+    </div>
+    <div>
+        <label for="color">Выбор цвета</label>
+        <input id="color" name="color" type="color">
+    </div>
+    <input type="submit" value="Добавить">
+</form>
+
+
+<script src="js/add.js"></script>
+</body>
+</html>

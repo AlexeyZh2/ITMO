@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+
+<section id="app">
+    <form @submit.prevent="sendRequest">
+        <h2>Заявка на выбор яхты</h2>
+        <fieldset>
+            <legend>Контактная информация</legend>
+            <div> <!-- v-model:свойство-из-data -->
+                <label for="name">Введите имя: </label>
+                <input type="text" id="name" name="user"
+                    v-model="userChoice.name">
+            </div>
+
+            <div>
+                <label for="email">Введите email: </label>
+                <input type="email" id="email" name="email"
+                    v-model.trim="userChoice.email">
+            </div>
+
+            <div>
+                <label for="phone">Введите телефон: </label>
+                <input type="text" id="phone" name="phone"
+                    v-model.trim="userChoice.phone">
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Информация для подбора яхты</legend>
+            <div>
+                <label for="companies">Укажите производителя: </label>
+                <select v-model="userChoice.companies" id="companies" name="company" multiple>
+                    <option :value="company.id" v-for="company in companiesList">
+                        {{ company.name }}
+                    </option>
+                </select>
+            </div>
+
+            <div>
+                <label>
+                    Максимальная цена (евро):
+                    <input type="number" name="price"
+                          v-model.number="userChoice.price">
+                </label>
+            </div>
+            <div>
+                <label>
+                    Максимальное количество палуб:
+                    <input type="number" name="deck-count"
+                           v-model.number="userChoice.deckCount">
+                </label>
+            </div>
+        </fieldset>
+
+        <fieldset>
+            <legend>Дополнительная информация</legend>
+            <div>
+                <div><label for="comment">Комментарий к заявке</label></div>
+                <textarea name="comment" id="comment"
+                    v-model.trim="userChoice.comment"></textarea>
+            </div>
+
+            <div>
+                <p>Как с Вами можно связаться?</p>
+                <div>
+                    <label>
+                        <input value="call" type="checkbox" name="contacts[]"
+                            v-model="userChoice.contacts">
+                        Звонок
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input value="sms" type="checkbox" name="contacts[]"
+                               v-model="userChoice.contacts">
+                        СМС
+                    </label>
+                </div>
+                <div>
+                    <label>
+                        <input value="email" type="checkbox" name="contacts[]"
+                               v-model="userChoice.contacts">
+                        E-mail
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+
+        <div>
+            <label>
+                Согласие на обработку персональных данных:
+                <input type="checkbox" name="agree" v-model="userChoice.agree">
+            </label>
+        </div>
+
+        <!-- кнопка должна быть заблокирована, если пользователь не согласился на обработку персональных данных -->
+        <!-- элемент заблокирован: disabled, disabled="true" элемент не заблокирован: нет атрибута, disabled="false" -->
+        <input type="submit" value="Подобрать" :disabled="!userChoice.agree">
+    </form>
+
+</section>
+
+<script src="js/lesson3.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+препроцессор sass в scss синтаксисе
+scss -> style.scss -> style.css
+
+npm - пакетный менеджер, управляет зависимостями
+(библиотеками, плагинами, фреймворками), которые необходимы проекту
+
+npm install -g sass установка пррепроцессора
+npm uninstall -g sass удаление пррепроцессора
+
+sass in.scss out.css скомпилировать css файл на основе scss файла
+sass --watch scss:css компилировать css файлы на основе scss файлов
+                  на каждое сохранение в директории scss
+
+
+sass scss/style.scss css/style.css
+
+
+
+<section class="row">
+    <div class="card col-sm-12 col-md-6 col-4">
+        <img class="big-img" src="https://picsum.photos/id/33/800/800">
+        <div class="description">
+            <img class="small-img" src="https://picsum.photos/id/33/800/800">
+            <span>Lorem ipsum dolor</span>
+        </div>
+    </div>
+    <div class="card col-sm-12 col-md-6 col-4">
+        <img class="big-img" src="https://picsum.photos/id/44/800/800">
+        <div class="description">
+            <img class="small-img" src="https://picsum.photos/id/44/800/800">
+            <span>Lorem ipsum dolor</span>
+        </div>
+    </div>
+    <div class="card col-sm-12 col-md-6 col-4">
+        <img class="big-img" src="https://picsum.photos/id/55/800/800">
+        <div class="description">
+            <img class="small-img" src="https://picsum.photos/id/55/800/800">
+            <span>Lorem ipsum dolor</span>
+        </div>
+    </div>
+</section>
+
+</body>
+</html>

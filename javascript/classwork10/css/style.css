@@ -1,0 +1,83 @@
+body {
+    font-size: 1.5rem;
+}
+
+.first-section {
+    margin: 0 auto 3rem;
+    max-width: 1200px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.text-upper {
+    text-transform: uppercase;
+}
+
+.first-section form {
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.first-section textarea {
+    resize: vertical;
+    height: 5rem;
+    margin-bottom: 1rem;
+}
+
+.first-section input[type=submit] {
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.second-section {
+    background-color: forestgreen;
+    max-width: 400px;
+    margin: 40px auto;
+    padding: 20px;
+}
+
+.article p:first-child {
+    background: lightgreen;
+    border-radius: 10px;
+    padding: 20px 10px;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+}
+
+.article p:last-child {
+    padding: 20px 10px;
+    display: none;
+}
+
+.article p:last-child.open {
+    display: block;
+}
+
+.third-section {
+    max-width: 300px;
+    margin: 2rem auto;
+    background-color: rgb(24, 255, 255);
+    padding: 2rem;
+    height: 5rem;
+    word-break: break-word;
+}
+
+.third-section input[name="input-text"] {
+    width: 100%;
+}
+
+#color-container {
+    height: 300px;
+    width: 300px;
+    border: 1px solid black;
+}
+
+.open {
+    display: block;
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/events.css">
+</head>
+<body>
+<!-- data-* атрибут-->
+<div id="sale_container"> <!-- обработчик -->
+    <h3>Выбор скидки</h3>
+    <p data-sale="d137d16e">Скидка</p>
+    <p data-sale="a15d25e1">Скидка</p>
+    <p data-sale="d137d16e">Скидка</p>
+    <p data-sale="d137d16e">Скидка</p>
+    <p data-sale="a15d25e1">Скидка</p>
+    <p data-sale="936b4763">Скидка</p>
+</div>
+
+
+<form name="change-color">
+    <div class="choice">
+        <span>Выбор цвета фона:</span>
+        <label><input  value="#B0BEC5" name="color" type="radio">Серый</label>
+        <label><input  value="#CE93D8" name="color" type="radio">Сиреневый</label>
+        <label><input  value="#ffffff" name="color" checked type="radio">Белый</label>
+    </div>
+</form>
+
+<form name="lesson">
+    <fieldset name="checkbox_fieldset">
+        <legend>Checkbox | Radio</legend>
+        <div class="choice">
+            <span>Отметьте интересующие языки программирования:</span>
+            <label><input checked value="php" name="lang[]" type="checkbox">PHP</label>
+            <label><input value="java" name="lang[]" type="checkbox">Java</label>
+            <label><input checked value="python" name="lang[]" type="checkbox">Python</label>
+            <label><input value="javascript" name="lang[]" type="checkbox">JavaScript</label>
+        </div>
+        <div class="additional-info">
+            <label><input type="checkbox" name="add-info">
+                Отметьте, если хотите указать дополнительную информацию</label>
+            <input name="info" type="text" disabled>
+        </div>
+    </fieldset>
+
+    <fieldset>
+        <legend>Поля со списком</legend>
+        <label for="countries">Выбор страны</label>
+        <select multiple id="countries" name="countries">
+            <optgroup label="Европа">
+                <option selected value="spain">Испания</option>
+                <option selected value="denmark">Дания</option>
+                <option value="switzerland">Швейцария</option>
+            </optgroup>
+
+            <optgroup label="Африка">
+                <option value="egypt">Египет</option>
+                <option value="zimbabwe">Зимбабве</option>
+                <option value="kenya">Кения</option>
+            </optgroup>
+        </select>
+    </fieldset>
+
+    <div class="buttons">
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+    </div>
+</form>
+
+<form name="registration" novalidate> <!-- novalidate отключает отображение встроенных сообщений об ошибке -->
+    <div class="form-message success">Форма регистрации</div>
+    <div>
+        <input name="login" type="text" placeholder="логин"
+               minlength="3" maxlength="8" required>
+        <span class="message">*</span>
+    </div>
+    <div>
+        <input name="pwd" type="password" placeholder="пароль"
+               minlength="6" required>
+        <span class="message">*</span>
+    </div>
+    <div>
+        <input name="age" type="number" placeholder="возраст"
+               min="18" max="200" required>
+        <span class="message">*</span>
+    </div>
+    <input type="submit" value="регистрация">
+</form>
+
+<script src="js/lesson11.js"></script>
+</body>
+</html>

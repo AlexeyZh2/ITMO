@@ -1,0 +1,108 @@
+// scss комментарий, не попадет в итоговый css файл
+/* css  комментарий, попадет в итоговый css файл */
+
+// sass scss/style.scss css/style.css
+
+// можно объявлять переменные
+// $имя-переменной: значение (значение css свойства);
+// область видимости переменных блок { }
+$light-blue: #BBDEFB;
+$pink: #F06292;
+$yellow: #FFF176;
+$orange: #FF5722;
+
+// объявление миксинов миксины
+@mixin change-opacity($opacity-value, $time){
+  opacity: $opacity-value;
+  transition: opacity $time;
+}
+
+
+// можно использовать обычный css синтаксис
+img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+body {           // использование переменных
+  background-color: $light-blue;
+  margin: 0;
+
+  // вложенность
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 1200px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  // вложенность медиазапросов
+  @media screen and (min-width: 600px) and (max-width: 760px){
+    background-color: white;
+  }
+}
+
+.card {
+  .big-img {
+    height: 80%;
+    display: block;
+  }
+
+  .big-img:hover{
+    // использование миксина
+    @include change-opacity(.5, 2s);
+  }
+
+  .small-img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+  }
+  span {
+    text-transform: uppercase;
+  }
+}
+
+// наследование
+%desc { // базовый (родительский) блок
+  padding: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: left;
+}
+
+.desc-pink {
+  // наследование от %имя базового блока
+  @extend %desc;
+  background-color: $pink;
+}
+.desc-yellow {
+  @extend %desc;
+  background-color: $yellow;
+}
+.desc-orange {
+  @extend %desc;
+  background-color: $orange;
+}
+
+// циклы
+// генерация классов в цикле
+@for $i from 1 through 12 {
+  .col-#{$i} {
+    flex: 0 0 8% * $i;
+  }
+}
+
+@media (max-width: 539px){
+  @for $i from 1 through 12 {
+    .col-sm-#{$i} {
+      flex: 0 0 8% * $i;
+    }
+  }
+}
+
+// открыть консоль - cmd (не git bash)
+// переходить в директории: cd путь к директории

@@ -1,0 +1,129 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 1.5rem;
+}
+
+#sale_container {
+    max-width: 700px;
+    margin: 2rem auto;
+    text-align: center;
+}
+
+#sale_container p {
+    background: red;
+    display: inline-block;
+    margin: 10px;
+    padding: 30px 5px;
+    text-align: center;
+    width: 200px;
+    color: white;
+    user-select: none;
+}
+
+
+form {
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+}
+
+.choice {
+    display: flex;
+    flex-direction: column;
+}
+
+.choice input {
+    margin-left: 1.5rem;
+}
+
+
+fieldset,
+form[name="lesson"] div {
+    margin-bottom: 1rem;
+}
+
+
+
+
+.additional-info {
+    display: flex;
+    flex-direction: column;
+}
+.additional-info input[type=text] {
+    margin-top: .7rem;
+    width: 50%;
+}
+
+.buttons {
+    display: flex;
+    gap: .5rem;
+}
+
+.buttons input {
+    flex: 1;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+form[name="registration"] {
+    width: 30%;
+    background-color: #fce4ec;
+    padding: 2rem;
+}
+
+form[name="registration"] div {
+    /*margin-bottom: .5rem;*/
+}
+
+form[name="registration"] input {
+    font-size: 1.1rem;
+    border-style: none;
+    outline-style: none;
+    background-color: inherit;
+    border-radius: unset;
+    display: inline-block;
+    width: 100%;
+    border-bottom: 3px solid #F48FB1;
+}
+
+form[name="registration"] input[type=submit]{
+    border: 2px solid #F48FB1;
+    color: #F48FB1;
+    cursor: pointer;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+form[name="registration"] input:invalid{
+    border-color: #900;
+}
+
+form[name="registration"] input:required:not(:focus){
+    border-color: #F48FB1;
+}
+
+
+.message {
+    font-size: 1rem;
+    visibility: hidden;
+}
+
+.active {
+    visibility: visible;
+}
+
+.error {
+    color: #900;
+}
+
+.success {
+    color: #F48FB1;
+}
+
+.form-message {
+    font-size: 1rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+}

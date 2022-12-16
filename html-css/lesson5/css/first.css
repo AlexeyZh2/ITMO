@@ -1,0 +1,117 @@
+body {
+    margin: 0;
+    font-size: 20px;
+    background-color: #D7CCC8;
+}
+
+header,
+footer {
+    background: #3E2723;
+    color: #EFEBE9;
+}
+
+main {
+    background-color: #EFEBE9;
+    color: #3E2723;
+}
+
+#right-aside,
+#left-aside {
+    background-color: #D7CCC8;
+}
+
+#slider {
+    box-shadow: inset 0 4px 5px 5px rgba(0, 0, 0, 0.5);
+    margin: 1rem;
+    background: url("../img/flowers.jpg");
+}
+
+.reviews div:nth-child(odd) {
+    background-color: #FAFAFA;
+}
+
+.reviews div:nth-child(even) {
+    background-color: #D7CCC8;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* CSS Grid Layout body */
+body {
+    display: grid;
+    grid-template-areas:
+            "header header header" /* первый ряд */
+            "left main right" /* второй ряд */
+            "slider slider slider" /* третий ряд */
+            "footer footer footer"; /* четвертый ряд */
+    grid-template-columns: 1fr minmax(500px, 1200px) 1fr;
+    grid-template-rows: 80px auto 50vh 100px;
+}
+
+header {
+    grid-area: header;
+}
+#left-aside {
+    grid-area: left;
+}
+main {
+    grid-area: main;
+}
+#right-aside {
+    grid-area: right;
+}
+#slider {
+    grid-area: slider;
+}
+footer {
+    grid-area: footer;
+}
+
+/* CSS Grid Layout main */
+
+main {
+    display: grid;
+    /*
+    grid-template-areas:;
+    grid-template-columns:;
+    grid-template-rows:;
+    */
+    grid-template:
+        "image text" /* высота первого ряда */
+        "spec reviews" /* высота второго ряда */
+        ". reviews" /* высота третьего ряда */
+        "similar similar";
+}
+.title {
+    grid-area: text;
+}
+.image {
+    grid-area: image;
+}
+.specifications {
+    grid-area: spec;
+}
+.reviews {
+    grid-area: reviews;
+}
+.similar {
+    grid-area: similar;
+    display: flex;
+}
+
+.specifications h3,
+.reviews h3 {
+    text-transform: uppercase;
+}
+
+.specifications table,
+.specifications td {
+    border: 2px solid #4E342E;
+    border-collapse: collapse;
+}
+
+
